@@ -1,0 +1,112 @@
+h1 {
+	color: #8972d1;
+	font-family: "Parisienne", cursive;
+	font-size: 60px;
+}
+
+h6 {
+	color: #8972d1;
+	font-family: "Parisienne", cursive;
+	font-size: 24px;
+}
+p {
+	color: rgb(207, 84, 84);
+}
+
+.input-button {
+	border-radius: 50px;
+	margin: 15px 30px;
+	display: inline;
+	background-color: #fe347f;
+	border: 1px solid #fff;
+	color: #fff;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 10px 25px;
+	text-decoration: none;
+	transition: all 200ms ease-in-out;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.input.button:hover {
+	color: black;
+	background: #97a7e3;
+	cursor: pointer;
+}
+
+.app-body {
+	text-align: center;
+}
+
+.cities {
+	margin: 30px auto 0;
+	background-color: transparent;
+	display: block;
+	width: 70%;
+}
+
+.meteo-today {
+	display: block;
+	margin: 50px auto 50px;
+	padding: 15px 5px;
+	background-color: rgba(137, 114, 239, 0.6);
+}
+
+.left-col {
+	text-align: left;
+}
+.central-icon {
+	color: #adf7d1;
+	font-size: 60px;
+}
+.main-temperature {
+	display: block;
+	margin-top: 10px;
+}
+
+.right-col {
+	text-align: right;
+}
+.app-body {
+	background-color: #adf7d1;
+}
+.choose-city {
+	margin-top: 30px;
+	width: 300px;
+	padding: 10px 30px;
+	text-align: center;
+}
+
+.current-button {
+	display: inline;
+	margin: 0 30px;
+}
+.search-button {
+	display: inline;
+	margin: 0 30px;
+}
+
+.temperature {
+	margin-top: 15px;
+	font-size: 18px;
+}
+
+.meteo-icon {
+	font-size: 20px;
+}
+
+.temp-indicator {
+	display: inline;
+	color: #adf7d1;
+	font-weight: bold;
+}
+.temp-indicator:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.actual-weather {
+	text-transform: capitalize;
+}
