@@ -110,3 +110,10 @@ p {
 .actual-weather {
 	text-transform: capitalize;
 }
+
+.footer {
+	display: block;
+	margin: 20px;
+	text-align: center;
+	color: black;
+}
