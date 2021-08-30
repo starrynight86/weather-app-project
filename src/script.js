@@ -8,7 +8,7 @@ function displayWeather(response) {
 	)}°C`;
 	//Sets sky condition
 	document.querySelector("#actual-weather").innerHTML =
-		response.data.weather[0].main;
+		response.data.weather[0].description;
 
 	//Sets real feel temperature
 	document.querySelector("#actual-feel").innerHTML = `Real-Feel: ${Math.round(
