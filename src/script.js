@@ -23,6 +23,13 @@ function displayWeather(response) {
 	document.querySelector(
 		"#actual-humidity"
 	).innerHTML = `Humidity: ${response.data.main.humidity}%`;
+	//Changes the icon
+	let iconElement = document.querySelector("#icon");
+	iconElement.setAttribute(
+		"src",
+		`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+	);
+	iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //Sends city data to displayWeather
@@ -115,4 +122,4 @@ function searchCityImperial() {
 let fahrenheitIndicator = document.querySelector("#fahrenheit-indicator");
 fahrenheitIndicator.addEventListener("click", searchCityImperial);
 
-searchCity("Rome");
+searchCity("Roma");
