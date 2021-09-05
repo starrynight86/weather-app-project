@@ -57,19 +57,25 @@
 
 					<div class="card meteo-today" style="width: 700px">
 						<div class="card-body">
+							<div>
+								<strong id="actual-city" class="actual-city"></strong> <br />
+							</div>
 							<div class="row">
-								<div class="col-3 left-col">	
-									<strong id="actual-city"></strong>
+								<div class="col-3 left-col">
+									<span>Last updated:</span>
 									<br />
 									<span id="actual-date">Sunday 15:40</span>
 									<br />
-									<span id="actual-weather" class="actual-weather">Cloudy</span>
+									<span id="actual-weather" class="actual-weather"></span>
 								</div>
-								<div class="col-6">
+								<div class="col-6 weather-temperature">
 									<img id="icon" src="" alt="" />
-									<br />
+
 									<strong id="main-temp" class="main-temperature"></strong>
-									<a href="#" id="celsius-indicator" class="temp-indicator"
+									<a
+										href="#"
+										id="celsius-indicator"
+										class="temp-indicator active"
 										>°C</a
 									>
 									|

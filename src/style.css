@@ -41,7 +41,7 @@ p {
 }
 
 .cities {
-	margin: 30px auto 0;
+	margin: 20px auto 0;
 	background-color: transparent;
 	display: block;
 	width: 70%;
@@ -49,8 +49,8 @@ p {
 
 .meteo-today {
 	display: block;
-	margin: 50px auto 50px;
-	padding: 15px 5px;
+	margin: 30px auto 30px;
+	padding: 5px 5px;
 	background-color: rgba(137, 114, 239, 0.6);
 }
 
@@ -73,7 +73,7 @@ p {
 	background-color: #adf7d1;
 }
 .choose-city {
-	margin-top: 30px;
+	margin-top: 10px;
 	width: 300px;
 	padding: 10px 30px;
 	text-align: center;
@@ -101,10 +101,15 @@ p {
 	display: inline;
 	color: #adf7d1;
 	font-weight: bold;
+	text-decoration: none;
 }
 .temp-indicator:hover {
 	color: black;
 	cursor: pointer;
+}
+
+.actual-weather {
+	display: inline-block;
 }
 
 .actual-weather:first-letter {
@@ -116,4 +121,18 @@ p {
 	margin: 20px;
 	text-align: center;
 	color: black;
+}
+
+.weather-temperature .active {
+	color: black;
+	cursor: default;
+}
+.weather-temperature .active:hover {
+	text-decoration: none;
+}
+.actual-city {
+	color: #fff;
+	font-weight: bold;
+	font-size: 40px;
+	font-family: "Parisienne", cursive;
 }

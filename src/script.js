@@ -1,10 +1,11 @@
 function displayWeather(response) {
 	console.log(response.data);
+	celsiusTemperature = response.data.main.temp;
 	//Sets actual city
 	document.querySelector("#actual-city").innerHTML = response.data.name;
 	//Sets actual temperature
 	document.querySelector("#main-temp").innerHTML = `${Math.round(
-		response.data.main.temp
+		celsiusTemperature
 	)}°C`;
 	//Sets sky condition
 	document.querySelector("#actual-weather").innerHTML =
@@ -23,6 +24,7 @@ function displayWeather(response) {
 	document.querySelector(
 		"#actual-humidity"
 	).innerHTML = `Humidity: ${response.data.main.humidity}%`;
+
 	//Changes the icon
 	let iconElement = document.querySelector("#icon");
 	iconElement.setAttribute(
@@ -100,26 +102,27 @@ function searchCityMetric() {
 	axios.get(apiUrl).then(displayWeatherMetric);
 }
 
-//Lets the user switch to Celsius
-let celsiusInput = document.querySelector("#celsius-indicator");
-celsiusInput.addEventListener("click", searchCityMetric);
-
-//Lets the user switch to Fahrenheit
-
-function displayWeatherImperial(response) {
-	document.querySelector("#main-temp").innerHTML = `${Math.round(
-		response.data.main.temp
-	)}°F`;
+function displayTemperatureImperial(event) {
+	event.preventDefault();
+	let temperatureElement = document.querySelector("#main-temp");
+	celsiusIndicator.classList.remove("active");
+	fahrenheitIndicator.classList.add("active");
+	let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+	temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+}
+function displayTemperatureCelsius(event) {
+	event.preventDefault();
+	let temperatureElement = document.querySelector("#main-temp");
+	celsiusIndicator.classList.add("active");
+	fahrenheitIndicator.classList.remove("active");
+	temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
 
-function searchCityImperial() {
-	let apiKey = "acfd78e73c052df652b44124ce0e5d1e";
-	let city = document.querySelector("#actual-city").innerHTML;
-	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-	axios.get(apiUrl).then(displayWeatherImperial);
-}
-
+let celsiusTemperature = null;
 let fahrenheitIndicator = document.querySelector("#fahrenheit-indicator");
-fahrenheitIndicator.addEventListener("click", searchCityImperial);
+fahrenheitIndicator.addEventListener("click", displayTemperatureImperial);
 
-searchCity("Roma");
+let celsiusIndicator = document.querySelector("#celsius-indicator");
+celsiusIndicator.addEventListener("click", displayTemperatureCelsius);
+
+searchCity("New York");
