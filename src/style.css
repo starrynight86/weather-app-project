@@ -136,3 +136,21 @@ p {
 	font-size: 40px;
 	font-family: "Parisienne", cursive;
 }
+.weather-forecast {
+	background-color: transparent;
+	border-radius: 5px;
+	opacity: 0.9;
+	padding: 15px 0;
+}
+
+.weather-forecast-temperatures {
+	font-size: 18px;
+	color: #8972d1;
+	font-family: "Parisienne", cursive;
+	margin-top: 15px;
+}
+
+.weather-forecast-temperature-min {
+	color: white;
+	font-weight: bold;
+}
