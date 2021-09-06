@@ -90,6 +90,32 @@ let day = days[now.getDay()];
 let actualDate = document.querySelector("#actual-date");
 actualDate.innerHTML = `${day} ${hours}:${minutesFormatted}`;
 
+function displayForecast() {
+	let days = ["Mon", "Tue", "Wed", "Thu"];
+	let forecastElement = document.querySelector("#forecast");
+	let forecastHTML = `<div class="row">`;
+
+	days.forEach(function (day) {
+		forecastHTML =
+			forecastHTML +
+			`<div class="col-2">
+								<div class="weather-forecast-date"><h6>${day}</h6></div>
+
+								<i class="fas fa-cloud-sun-rain meteo-icon"></i>
+								<br />
+
+								<div class="weather-forecast-temperatures">
+									<span class="weather-forecast-temperature-max"> 21°c</span>
+									<span class="weather-forecast-temperature-min">15°c</span>
+								</div>
+							</div>`;
+	});
+
+	forecastHTML = forecastHTML + `</div>`;
+	forecastElement.innerHTML = forecastHTML;
+	console.log(forecastHTML);
+}
+
 function displayWeatherMetric(response) {
 	document.querySelector("#main-temp").innerHTML = `${Math.round(
 		response.data.main.temp
@@ -126,3 +152,5 @@ let celsiusIndicator = document.querySelector("#celsius-indicator");
 celsiusIndicator.addEventListener("click", displayTemperatureCelsius);
 
 searchCity("New York");
+
+displayForecast();
