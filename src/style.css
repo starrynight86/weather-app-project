@@ -144,13 +144,18 @@ p {
 }
 
 .weather-forecast-temperatures {
-	font-size: 18px;
+	font-size: 14px;
 	color: #8972d1;
-	font-family: "Parisienne", cursive;
+	font-family: "Arial", cursive;
 	margin-top: 15px;
 }
 
 .weather-forecast-temperature-min {
 	color: white;
 	font-weight: bold;
+}
+
+.forecast-day {
+	font-family: "Parisienne", cursive;
+	font-size: 18px;
 }
