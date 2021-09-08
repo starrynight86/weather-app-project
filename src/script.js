@@ -151,27 +151,6 @@ function searchCityMetric() {
 	axios.get(apiUrl).then(displayWeatherMetric);
 }
 
-function displayTemperatureImperial(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector("#main-temp");
-	celsiusIndicator.classList.remove("active");
-	fahrenheitIndicator.classList.add("active");
-	let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-	temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
-}
-function displayTemperatureCelsius(event) {
-	event.preventDefault();
-	let temperatureElement = document.querySelector("#main-temp");
-	celsiusIndicator.classList.add("active");
-	fahrenheitIndicator.classList.remove("active");
-	temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
-}
-
 let celsiusTemperature = null;
-let fahrenheitIndicator = document.querySelector("#fahrenheit-indicator");
-fahrenheitIndicator.addEventListener("click", displayTemperatureImperial);
-
-let celsiusIndicator = document.querySelector("#celsius-indicator");
-celsiusIndicator.addEventListener("click", displayTemperatureCelsius);
 
 searchCity("New York");
